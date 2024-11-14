@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3308DB932CE666C200A722B8 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308DB922CE666C200A722B8 /* SearchHistoryView.swift */; };
+		3308DB952CE666E700A722B8 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308DB942CE666E700A722B8 /* JobQueue.swift */; };
+		3308DB972CE6670A00A722B8 /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308DB962CE6670A00A722B8 /* JobScheduler.swift */; };
 		331EFEA22CE4F6F8003C2BCE /* GalkinHomework5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EFEA12CE4F6F8003C2BCE /* GalkinHomework5App.swift */; };
 		331EFEA42CE4F6F8003C2BCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331EFEA32CE4F6F8003C2BCE /* ContentView.swift */; };
 		331EFEA62CE4F6FB003C2BCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331EFEA52CE4F6FB003C2BCE /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3308DB922CE666C200A722B8 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
+		3308DB942CE666E700A722B8 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		3308DB962CE6670A00A722B8 /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
 		331EFE9E2CE4F6F8003C2BCE /* GalkinHomework5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalkinHomework5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		331EFEA12CE4F6F8003C2BCE /* GalkinHomework5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalkinHomework5App.swift; sourceTree = "<group>"; };
 		331EFEA32CE4F6F8003C2BCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 				331EFEA12CE4F6F8003C2BCE /* GalkinHomework5App.swift */,
 				331EFEA32CE4F6F8003C2BCE /* ContentView.swift */,
 				331EFEB12CE4F71A003C2BCE /* SuffixIterator.swift */,
+				3308DB922CE666C200A722B8 /* SearchHistoryView.swift */,
+				3308DB942CE666E700A722B8 /* JobQueue.swift */,
+				3308DB962CE6670A00A722B8 /* JobScheduler.swift */,
 				331EFEB02CE4F71A003C2BCE /* SuffixManager.swift */,
 				331EFEA52CE4F6FB003C2BCE /* Assets.xcassets */,
 				331EFEA72CE4F6FB003C2BCE /* Preview Content */,
@@ -143,10 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3308DB972CE6670A00A722B8 /* JobScheduler.swift in Sources */,
 				331EFEA42CE4F6F8003C2BCE /* ContentView.swift in Sources */,
 				331EFEA22CE4F6F8003C2BCE /* GalkinHomework5App.swift in Sources */,
+				3308DB932CE666C200A722B8 /* SearchHistoryView.swift in Sources */,
 				331EFEB42CE4F71B003C2BCE /* SuffixManager.swift in Sources */,
 				331EFEB52CE4F71B003C2BCE /* SuffixIterator.swift in Sources */,
+				3308DB952CE666E700A722B8 /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

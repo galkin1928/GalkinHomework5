@@ -46,6 +46,12 @@ class SuffixManager: ObservableObject {
             filteredSuffixCounts = suffixCounts.filter { $0.key.contains(query) }
         }
     }
+
+    func getAnalysisResult() -> String {
+        return suffixCounts
+            .map { "\($0.key) - \($0.value) раз(а)" }
+            .joined(separator: ", ")
+    }
 }
 
 enum SuffixViewMode {

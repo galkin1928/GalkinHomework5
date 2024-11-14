@@ -9,31 +9,47 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var inputText: String = ""
+    @State private var action: Int? = 0
     @ObservedObject private var suffixManager = SuffixManager()
+    @ObservedObject private var jobScheduler = JobScheduler()
 
     var body: some View {
-        VStack {
-            TextField("Введите текст", text: $inputText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                .onChange(of: inputText) { _, newValue in
-                    suffixManager.analyzeText(newValue)
+        NavigationView {
+            VStack {
+                TextField("Введите текст", text: $inputText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .onSubmit {
+                        Task {
+                            suffixManager.analyzeText(inputText)
+                            await jobScheduler.scheduleJob(withResult: suffixManager.getAnalysisResult())
+                        }
+                    }
+                    .onChange(of: inputText) { _, newValue in
+                        suffixManager.analyzeText(newValue)
+                    }
+                
+                NavigationLink {
+                    SearchHistoryView(jobScheduler: jobScheduler)
+                } label: {
+                    Text("История поиска суффиксов")
                 }
-
-            Picker("", selection: $suffixManager.selectedView) {
-                Text("Все").tag(SuffixViewMode.all)
-                Text("Топ-10").tag(SuffixViewMode.top10)
+                
+                Picker("", selection: $suffixManager.selectedView) {
+                    Text("Все").tag(SuffixViewMode.all)
+                    Text("Топ-10").tag(SuffixViewMode.top10)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                if suffixManager.selectedView == .all {
+                    SuffixListView(suffixManager: suffixManager)
+                } else {
+                    TopSuffixesView(suffixManager: suffixManager)
+                }
             }
-            .pickerStyle(SegmentedPickerStyle())
             .padding()
-
-            if suffixManager.selectedView == .all {
-                SuffixListView(suffixManager: suffixManager)
-            } else {
-                TopSuffixesView(suffixManager: suffixManager)
-            }
         }
-        .padding()
     }
 }
 
